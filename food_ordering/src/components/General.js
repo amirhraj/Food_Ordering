@@ -50,7 +50,9 @@ function General (){
                      
                      <img src={item.foto} alt={item.title} />
                      <h3>{item.title}</h3>
-                     <p style={{ color: getRandomColor(), backgroundColor: getRandomColor(), color: getRandomColor() }}>{item.review}</p>
+                     <p style={{ color: getRandomColor(), backgroundColor: getRandomColor(), color: getRandomColor() }}>
+                        <img src={mini_star} alt="" />
+                      {item.review}</p>
                      {index !== myData.length - 1 &&  <div className='line'></div>}
                     
                 </div>
