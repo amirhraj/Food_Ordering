@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 100;
+    src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+    
+}
+@font-face {
+    font-family: 'Outfint';
+    font-weight: 200;
+    src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200&display=swap');
+}
+
+.content_general{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
+    width: 360px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid black;
+    height: 800px;
+}
+.star{
+    margin-top: 16px;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.content_general_middle{
+    position: relative;
+    width: 259px;
+    height: 88px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+}
+.content_general_middle img{
+    width: 72px;
+    height: 72px;
+}
+.content_general_middle h3{
+    position: absolute;
+    font-size: 16px;
+    margin-left: 80px;
+    top: 0;
+}
+.content_general_middle p {
+    width: 51px;
+    height: 22px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.line{
+    position: absolute;
+    top: 90px;
+    height: 1px;
+    background-color: #DEDEDE;
+}
+
