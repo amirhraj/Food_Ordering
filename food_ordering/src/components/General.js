@@ -26,14 +26,14 @@ function General (){
       setActiveIndex(index);
     };
 
-    // Функция для обновления данных в состоянии
+
     const updateData = () => {
       const newData = [
         {'foto': Rest_italia, title : 'Pizza Italiano', review: '4/5' },
         {'foto': Rest_Kebab, title : 'Traditional Kebab', review: '2/5'},
         {'foto': Rest_fish, title : 'Star Fish', review: '5/5'},
         {'foto': Rest_Burger, title : 'Boston Burger’s', review: '3/5'}
-      ]; // Замените на свои данные
+      ]; 
       setMyData(newData);
     };
 
@@ -46,8 +46,7 @@ function General (){
         <div className='content_general'>
             <img className='star' src={star} alt="Stars" />
             {myData.map((item, index) => (
-                <div className='content_general_middle' key={index}>
-                     
+                <div className='content_general_middle' key={index}> 
                      <img src={item.foto} alt={item.title} />
                      <h3>{item.title}</h3>
                      <p style={{ color: getRandomColor(), backgroundColor: getRandomColor(), color: getRandomColor() }}>
