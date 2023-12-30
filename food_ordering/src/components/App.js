@@ -24,11 +24,12 @@ import Kebab from '../media/micro_menu/Kebab.png';
 import Salad from '../media/micro_menu/Salad.png';
 import Sea_food from '../media/micro_menu/sea_food.png';
 import Heart from '../media/icon/heart.png';
-import home from '../media/icon/home.svg';
-import like from '../media/icon/like.png';
-import notification from '../media/icon/notification.png';
-import profilecircle from '../media/icon/profilecircle.png';
-import buscket from '../media/icon/shoppingcart.png';
+import {ReactComponent as Home} from '../media/icon/home.svg';
+import {ReactComponent as Like} from '../media/icon/like.svg';
+import {ReactComponent as Notification}  from '../media/icon/notification.svg';
+import  {ReactComponent as Profilecircle} from '../media/icon/profilecircle.svg';
+import {ReactComponent as Buscket} from '../media/icon/redBucket.svg';
+import line from '../media/icon/LINE.svg';
 
 
 function App() {
@@ -93,8 +94,8 @@ function App() {
           className={`fab-item ${activeIndex === 0 ? 'active' : ''}`}
           onClick={() => handleItemClick(0)}
         >
-          <a href="#">
-          <img src={home} alt="" />
+          <a href="#section">
+          <Home className="home"/>
           </a>
          
         </li>
@@ -102,17 +103,17 @@ function App() {
           className={`fab-item ${activeIndex === 1 ? 'active' : ''}`}
           onClick={() => handleItemClick(1)}
         >
-          <a href="#">
-          <img src={like} alt="" />
+          <a href="#section">      
+          <Like className="like"/>
           </a>
          
         </li>
         <li
-          className={`fab-item ${activeIndex === 2 ? 'active' : ''}`}
+          className={`fab-item red  ${activeIndex === 2 ? 'active' : ''}`}
           onClick={() => handleItemClick(2)}
         >
-          <a href="#">
-          <img src={buscket} alt="" />
+          <a href="#section">
+          <Buscket className="buscket" />
           </a>
          
         </li>
@@ -120,8 +121,8 @@ function App() {
           className={`fab-item ${activeIndex === 3 ? 'active' : ''}`}
           onClick={() => handleItemClick(3)}
         >
-          <a href="#">
-          <img src={notification} alt="" />
+          <a href="#section">
+          <Notification className="notification"/>
           </a>
          
         </li>
@@ -129,11 +130,13 @@ function App() {
           className={`fab-item ${activeIndex === 4 ? 'active' : ''}`}
           onClick={() => handleItemClick(4)}
         >
-          <a href="#">
-          <img src={profilecircle} alt="" />
+          <a href="#section">
+          <Profilecircle className="profilecircle" />
           </a>
         </li>
-          <div className='indicator'></div>
+          <div className='indicator'>
+            <img src={line} alt="" />
+          </div>
         </ul>
         </div>
       </footer>
