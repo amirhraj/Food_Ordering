@@ -23,17 +23,22 @@ import Fast from '../media/micro_menu/fast_food.png';
 import Kebab from '../media/micro_menu/Kebab.png';
 import Salad from '../media/micro_menu/Salad.png';
 import Sea_food from '../media/micro_menu/sea_food.png';
-import Heart from '../media/icon/heart.png';
 import {ReactComponent as Home} from '../media/icon/home.svg';
 import {ReactComponent as Like} from '../media/icon/like.svg';
 import {ReactComponent as Notification}  from '../media/icon/notification.svg';
 import  {ReactComponent as Profilecircle} from '../media/icon/profilecircle.svg';
 import {ReactComponent as Buscket} from '../media/icon/redBucket.svg';
 import line from '../media/icon/LINE.svg';
+import Card  from './Card';
 
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClickItem = (item) => {
+    setSelectedItem(item);
+  };
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
@@ -67,14 +72,17 @@ function App() {
           <div className='content_promo_offer'>
             <p className='promo_text'>30% Off on your first purchase</p>
           </div>
-          <div className='content_menu'>
-            <img src={burger} alt="burger" />
-            <img src={pizza} alt="pizza" />
-            <img src={pasta} alt="pasta" />
-            <img src={sandwich} alt="andwich" />
-            <img src={fri} alt="fri" />
-            <img src={kebab} alt="kebab" />
+             <div className='content_menu'>
+             <img src={burger} alt="burger" onClick={() => handleItemClickItem('burger')} />
+             <img src={pizza} alt="pizza" onClick={() => handleItemClickItem('pizza')} />
+             <img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} />
+             <img src={sandwich} alt="sandwich" onClick={() => handleItemClickItem('sandwich')} />
+             <img src={fri} alt="fri" onClick={() => handleItemClickItem('fri')} />
+              <img src={kebab} alt="kebab" onClick={() => handleItemClickItem('kebab')} />
           </div>
+           {selectedItem && (
+             <Card item={selectedItem} />
+               )}
           <button className='see_more'>See More... </button>
           <div className='content_mini_menu'>
               <img src={Vegan} alt="burger" />

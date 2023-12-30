@@ -9,3 +9,11 @@
     font-weight: 200;
     src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200&display=swap');
   }
+
+  .content_card{
+    width: 360px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid black;
+    height: 800px;
+  }

@@ -1,23 +1,99 @@
 import React, { useState, useEffect } from 'react';
+import '../styled/Card.css';
+import Burger_General from '../media/Burger_card/General_burger.png';
+import burger1  from '../media/Burger_card/burger1.png';
+import  burger2 from '../media/Burger_card/burger2.png';
+import burger3  from '../media/Burger_card/burger3.png';
+import burger4  from '../media/Burger_card/burger4.png';
+import Pizza from '../media/Pizza_card/Pizza_General.png';
+import pizza1 from '../media/Pizza_card/pizza1.png';
+import pizza2 from '../media/Pizza_card/pizza2.png';
+import pizza3 from '../media/Pizza_card/pizza3.png';
+import pizza4 from '../media/Pizza_card/pizza4.png';
+import Kebab from '../media/Cebab_card/kebab_general.png';
+import kebab1 from '../media/Cebab_card/kebab1.png';
+import kebab2 from '../media/Cebab_card/kebab2.png';
+import kebab3 from '../media/Cebab_card/kebab3.png';
+import kebab4 from '../media/Cebab_card/kebab4.png';
+import Back from '../media/icon/arrowleft.svg';
+import busk from '../media/icon/shoppingcart.svg';
+import heart from '../media/icon/heart.svg';
 
 
-function Card(){
-    const [myData, setMyData] = useState([]);
+
+function Card({item}){
+  console.log(item)
+    const [myData, setMyData] = useState(null)
+    const [count, setCount] = useState(0);
+
 
     const updateData = () => {
          const newData = [
-        //   {'fotoGeneral': Rest_italia, 'foto1': Rest_italia, 'foto2': Rest_italia, 'foto3': Rest_italia, 'foto4': Rest_italia, title : 'Burger', price: '$8.99', description: "Ham, Cheddar Cheese, Onion, Cornichon, Salad, Tomato", name : "Cheese Burger Whopper" },
-        //   {'fotoGeneral': Rest_italia, 'foto1': Rest_italia, 'foto2': Rest_italia, 'foto3': Rest_italia, 'foto4': Rest_italia, title : 'Burger', price: '$8.99', description: "Ham, Cheddar Cheese, Onion, Cornichon, Salad, Tomato", name : "Cheese Burger Whopper" },,
-        //   {'fotoGeneral': Rest_italia, 'foto1': Rest_italia, 'foto2': Rest_italia, 'foto3': Rest_italia, 'foto4': Rest_italia, title : 'Burger', price: '$8.99', description: "Ham, Cheddar Cheese, Onion, Cornichon, Salad, Tomato", name : "Cheese Burger Whopper" },,
+          { id : "burger",'fotoGeneral': Burger_General, 'foto1': burger1, 'foto2': burger2, 'foto3': burger3, 'foto4': burger4, title : 'Burger', price: '$8.99', description: "Ham, Cheddar Cheese, Onion, Cornichon, Salad, Tomato", name : "Cheese Burger Whopper" },
+         { id : "pizza",'fotoGeneral': Pizza, 'foto1': pizza1, 'foto2':pizza2 , 'foto3': pizza3, 'foto4': pizza4, title : 'Pizza', price: '$12.99', description: "Bread, Pepperoni, Cheese, Parsil", name : "Margarita Pepperoni Pizza" },
+           { id : "pasta",'fotoGeneral': Kebab, 'foto1': kebab1, 'foto2': kebab2, 'foto3': kebab3, 'foto4': kebab4, title : 'Kebab', price: '$8.99', description: "Beef, Chicken, Potato, Aubergine, Tomato Sauce, Pepper, Mushroom", name : "Mix of Beef, Chicken, Ribs, Potato" },,
          ]; 
         setMyData(newData);
       };
+
+      
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count -1 );
+    if (count <= 0){
+      setCount(count );
+    }
+  };
   
       useEffect(() => {
           updateData();
         }, []);
     return(
-            <></>
+            <>
+            <div className='content_card'>
+                <div className='content_card_header'>
+                  <a href="">
+                      <img src={Back} alt="" />
+                  </a>
+                  <p className='content_header_title'>Burgers</p>
+                  <a href="">
+                    <img src={busk} alt="" />
+                  </a>
+                </div>
+                <div className='content_card_link'>
+                  <a href="#Contant">All items</a>
+                  <a href="#Contant">New items</a>
+                  <a href="#Contant">Recommended</a>
+                  <a href="#Contant">special</a>
+                </div>
+                <div className='content_card_middle'>
+                      <img src={Burger_General} alt="" />
+                      <img src={burger1} alt="" />
+                      <img src={burger2} alt="" />
+                      <img src={burger3} alt="" />
+                      <img src={burger4} alt="" />
+                      <p className='content_card_name'></p>
+                      <img src={heart} alt="" />
+                      <p className='content_card_descp'></p>
+                      <p className='content_card_price'></p>
+                </div>
+                <div className='content_card_count'>
+                      <button onClick={increment}>+</button>
+                      <p className='count'>{count}</p>
+                      <button onClick={decrement}>-</button>
+                </div>
+                <div>
+                      <button className='btn_add'>
+                      Add To Cart
+                      </button>
+                </div>
+
+
+            </div>
+            </>
     )
 }
 
