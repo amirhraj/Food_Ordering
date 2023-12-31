@@ -5,13 +5,26 @@ import App from './components/App';
 import General  from './components/General';
 import Card from './components/Card';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet
+} from 'react-router-dom';
+import NotFound  from './components/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     {/* <App />    */}
-     {/* <General />  */}
-     <Card/>
+     <BrowserRouter>
+      <Routes>
+          <Route path="/" element={< App /> } />
+          <Route path="/favorit" element={<General /> } />
+          <Route path="/Card" element={ <Card/>} />
+          <Route path="/*" element={ <NotFound/>} />
+         
+      </Routes>
+   </BrowserRouter>
   </React.StrictMode>
 );
 

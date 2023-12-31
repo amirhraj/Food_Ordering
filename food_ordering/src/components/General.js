@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import  '../styled/General_style.css'
 import star from '../media/menu/Stars.png';
 import Rest_italia from '../media/menu/Italia.png';
@@ -13,6 +14,7 @@ import {ReactComponent as Notification}  from '../media/icon/notification.svg';
 import  {ReactComponent as Profilecircle} from '../media/icon/profilecircle.svg';
 import {ReactComponent as Buscket} from '../media/icon/redBucket.svg';
 import line from '../media/icon/LINE.svg';
+import Footer  from './footer';
 
 function getRandomColor() {
     const getRandomValue = () => Math.floor(Math.random() * 256);
@@ -21,11 +23,7 @@ function getRandomColor() {
 
 function General (){
     const [myData, setMyData] = useState([]);
-    const [activeIndex, setActiveIndex] = useState(null);
 
-    const handleItemClick = (index) => {
-      setActiveIndex(index);
-    };
 
 
     const updateData = () => {
@@ -58,59 +56,8 @@ function General (){
                 </div>
                 
       ))}
-                  <footer className = "footer_content">
-       <div className="fab-container">
-        <ul>
-        <li
-          className={`fab-item ${activeIndex === 0 ? 'active' : ''}`}
-          onClick={() => handleItemClick(0)}
-        >
-          <a href="#section">
-          <Home className="home" />
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 1 ? 'active' : ''}`}
-          onClick={() => handleItemClick(1)}
-        >
-          <a href="#section">
-          <Like className="like"/>
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 2 ? 'active' : ''}`}
-          onClick={() => handleItemClick(2)}
-        >
-          <a href="#section">
-          <Buscket className="buscket" />
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 3 ? 'active' : ''}`}
-          onClick={() => handleItemClick(3)}
-        >
-          <a href="#section">
-          <Notification className="notification"/>
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 4 ? 'active' : ''}`}
-          onClick={() => handleItemClick(4)}
-        >
-          <a href="#section">
-          <Profilecircle className="profilecircle" />
-          </a>
-        </li>
-        <div className='indicator'>
-            <img src={line} alt="" />
-          </div>
-        </ul>
-        </div>
-      </footer>
+      <Footer/>
+                 
         </div>
         </>
     )

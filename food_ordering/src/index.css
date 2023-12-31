@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h3{
+  text-decoration: none;
+}
+.notFound{
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.link{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  gap: 10px;
+}

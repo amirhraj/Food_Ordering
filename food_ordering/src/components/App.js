@@ -1,6 +1,6 @@
 
  import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+ import { Link, Outlet } from 'react-router-dom';
 import '../App.css';
 import logo from '../media/icon/Food_Offer.svg';
 import  Burger from '../media/icon/hambergermenu.svg';
@@ -30,6 +30,7 @@ import  {ReactComponent as Profilecircle} from '../media/icon/profilecircle.svg'
 import {ReactComponent as Buscket} from '../media/icon/redBucket.svg';
 import line from '../media/icon/LINE.svg';
 import Card  from './Card';
+import Footer from '../components/footer.js';
 
 
 function App() {
@@ -73,81 +74,30 @@ function App() {
             <p className='promo_text'>30% Off on your first purchase</p>
           </div>
              <div className='content_menu'>
-             <img src={burger} alt="burger" onClick={() => handleItemClickItem('burger')} />
-             <img src={pizza} alt="pizza" onClick={() => handleItemClickItem('pizza')} />
-             <img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} />
-             <img src={sandwich} alt="sandwich" onClick={() => handleItemClickItem('sandwich')} />
-             <img src={fri} alt="fri" onClick={() => handleItemClickItem('fri')} />
-              <img src={kebab} alt="kebab" onClick={() => handleItemClickItem('kebab')} />
+                  <Link to="/Card"><img src={burger} alt="burger" onClick={() => handleItemClickItem('burger')} /></Link> 
+                  <Link to="/Card"> <img src={pizza} alt="pizza" onClick={() => handleItemClickItem('pizza')} /></Link> 
+                  <Link to="/Card"><img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} /></Link> 
+                  <Link to="/*"><img src={sandwich} alt="sandwich" onClick={() => handleItemClickItem('sandwich')} /></Link> 
+                  <Link to="/*"><img src={fri} alt="fri" onClick={() => handleItemClickItem('fri')} /></Link> 
+                  <Link to="/*"> <img src={kebab} alt="kebab" onClick={() => handleItemClickItem('kebab')} /></Link> 
           </div>
            {selectedItem && (
              <Card item={selectedItem} />
                )}
           <button className='see_more'>See More... </button>
           <div className='content_mini_menu'>
-              <img src={Vegan} alt="burger" />
-              <img src={Sea_food} alt="pizza" />
-              <img src={Fast} alt="pasta" />
-              <img src={Kebab} alt="pasta" />
-              <img src={Salad} alt="andwich" />
-              <img src={Dessert} alt="fri" />
-              <img src={Cake} alt="kebab" />
-              <img src={Coffe} alt="kebab" />
+                  <Link  to='/Card'><img src={Vegan} alt="burger" /></Link>  
+                  <Link to='/Card'><img src={Sea_food} alt="pizza" /></Link>  
+                  <Link to='/Card'><img src={Fast} alt="pasta" /></Link>  
+                  <Link to='/Card'><img src={Kebab} alt="pasta" /></Link>    
+                  <Link to='/Card'> <img src={Salad} alt="andwich" /></Link> 
+                  <Link to='/Card'><img src={Dessert} alt="fri" /></Link> 
+                  <Link to='/Card'> <img src={Cake} alt="kebab" /></Link> 
+                  <Link to='/Card'><img src={Coffe} alt="kebab" /></Link>
+                  <Outlet />  
           </div>
+            <Footer />
       </body>
-      <footer className = "footer_content">
-       <div className="fab-container">
-        <ul>
-        <li
-          className={`fab-item ${activeIndex === 0 ? 'active' : ''}`}
-          onClick={() => handleItemClick(0)}
-        >
-          <a href="#section">
-          <Home className="home"/>
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 1 ? 'active' : ''}`}
-          onClick={() => handleItemClick(1)}
-        >
-          <a href="#section">      
-          <Like className="like"/>
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item red  ${activeIndex === 2 ? 'active' : ''}`}
-          onClick={() => handleItemClick(2)}
-        >
-          <a href="#section">
-          <Buscket className="buscket" />
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 3 ? 'active' : ''}`}
-          onClick={() => handleItemClick(3)}
-        >
-          <a href="#section">
-          <Notification className="notification"/>
-          </a>
-         
-        </li>
-        <li
-          className={`fab-item ${activeIndex === 4 ? 'active' : ''}`}
-          onClick={() => handleItemClick(4)}
-        >
-          <a href="#section">
-          <Profilecircle className="profilecircle" />
-          </a>
-        </li>
-          <div className='indicator'>
-            <img src={line} alt="" />
-          </div>
-        </ul>
-        </div>
-      </footer>
     </div>
   );
 
