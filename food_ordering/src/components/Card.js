@@ -17,7 +17,7 @@ import kebab3 from '../media/Cebab_card/kebab3.png';
 import kebab4 from '../media/Cebab_card/kebab4.png';
 import Back from '../media/icon/arrowleft.svg';
 import busk from '../media/icon/shoppingcart.svg';
-import heart from '../media/icon/heart.svg';
+import {ReactComponent as Heart }from '../media/icon/heart.svg';
 
 
 
@@ -25,7 +25,12 @@ function Card({item}){
   console.log(item)
     const [myData, setMyData] = useState(null)
     const [count, setCount] = useState(0);
+    const [isLiked, setIsLiked] = useState(false);
 
+    const handleToggleLike = () => {
+      setIsLiked(!isLiked);
+    };
+    const heartColor = isLiked ? 'red' : 'white';
 
     const updateData = () => {
          const newData = [
@@ -55,11 +60,11 @@ function Card({item}){
             <>
             <div className='content_card'>
                 <div className='content_card_header'>
-                  <a href="">
+                  <a href="#BackHome">
                       <img src={Back} alt="" />
                   </a>
                   <p className='content_header_title'>Burgers</p>
-                  <a href="">
+                  <a href="#busck">
                     <img src={busk} alt="" />
                   </a>
                 </div>
@@ -70,22 +75,30 @@ function Card({item}){
                   <a href="#Contant">special</a>
                 </div>
                 <div className='content_card_middle'>
-                      <img src={Burger_General} alt="" />
+                  <div className='content_card_foto'>
+                      <img className='general_foto' src={Burger_General} alt="" />
+                      <div className='content_foto_column'>
                       <img src={burger1} alt="" />
                       <img src={burger2} alt="" />
                       <img src={burger3} alt="" />
                       <img src={burger4} alt="" />
-                      <p className='content_card_name'></p>
-                      <img src={heart} alt="" />
-                      <p className='content_card_descp'></p>
-                      <p className='content_card_price'></p>
+                      </div>
+
+                  </div>
+                      <p className='content_card_name'>Cheese Burger <br /> Whopper</p>
+                      <Heart 
+                      onClick={handleToggleLike}
+                      className='foto_heart'
+                      fill={heartColor}  />
+                      <p className='content_card_descp'>Ham, Cheddar Cheese, Onion, Cornichon, Salad, Tomato</p>
+                      <p className='content_card_price'>$8.99</p>
                 </div>
                 <div className='content_card_count'>
                       <button onClick={increment}>+</button>
                       <p className='count'>{count}</p>
-                      <button onClick={decrement}>-</button>
+                      <button className='decrement' onClick={decrement}>-</button>
                 </div>
-                <div>
+                <div className='btn_content_add'>
                       <button className='btn_add'>
                       Add To Cart
                       </button>
