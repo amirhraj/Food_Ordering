@@ -6,4 +6,4 @@
 ```
 Комерческий проект
 ```
-[Project](https://github.com/amirhraj/Food_Ordering/blob/main/Food_ordering.PNG)
+![Project](https://github.com/amirhraj/Food_Ordering/blob/main/Food_ordering.PNG)
