@@ -1,6 +1,6 @@
 
- import React, { useState } from 'react';
- import { Link, Outlet } from 'react-router-dom';
+ import React, { useEffect, useState } from 'react';
+ import { Link, Outlet, useLocation } from 'react-router-dom';
 import '../App.css';
 import logo from '../media/icon/Food_Offer.svg';
 import  Burger from '../media/icon/hambergermenu.svg';
@@ -32,21 +32,49 @@ import line from '../media/icon/LINE.svg';
 import Card  from './Card';
 import Footer from '../components/footer.js';
 
+const SelectedItemContext = React.createContext();
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
+  const location = useLocation();
+
+  const setItemWithCallback = (item, callback) => {
+    setSelectedItem((prevItem) => {
+      if (prevItem !== item) {
+        if (callback) {
+          callback();
+        }
+        return item;
+      }
+      return prevItem;
+    });
+  };
+
+
 
   const handleItemClickItem = (item) => {
+    console.log(item,"Внутри клик айтема")
     setSelectedItem(item);
+
+    console.log(selectedItem,"Внутри клик айтема2")
   };
+
+  useEffect(() => {
+    console.log(selectedItem, "Внутри useEffect после обновления");
+  }, [selectedItem]);
+
+
+
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
   };
 
   return (
-    <div className="App">
+
+    <div className="App"> 
+            {  <Card  item={selectedItem} />}
       <header className="App-header">
         <img className="logo" src={logo} alt="Иконка" />
         <div className="wraper_group_header">
@@ -74,16 +102,14 @@ function App() {
             <p className='promo_text'>30% Off on your first purchase</p>
           </div>
              <div className='content_menu'>
-                  <Link to="/Card"><img src={burger} alt="burger" onClick={() => handleItemClickItem('burger')} /></Link> 
-                  <Link to="/Card"> <img src={pizza} alt="pizza" onClick={() => handleItemClickItem('pizza')} /></Link> 
-                  <Link to="/Card"><img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} /></Link> 
+                  <Link to="/Card/burger" ><img src={burger} alt="burger" onClick={() => handleItemClickItem('burger')} /></Link> 
+                  <Link to="/Card/pizza"> <img src={pizza} alt="pizza" onClick={() => handleItemClickItem('pizza')} /></Link> 
+                  <Link to="/Card/pasta"><img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} /></Link> 
                   <Link to="/*"><img src={sandwich} alt="sandwich" onClick={() => handleItemClickItem('sandwich')} /></Link> 
                   <Link to="/*"><img src={fri} alt="fri" onClick={() => handleItemClickItem('fri')} /></Link> 
                   <Link to="/*"> <img src={kebab} alt="kebab" onClick={() => handleItemClickItem('kebab')} /></Link> 
           </div>
-           {selectedItem && (
-             <Card item={selectedItem} />
-               )}
+  
           <button className='see_more'>See More... </button>
           <div className='content_mini_menu'>
                   <Link  to='/Card'><img src={Vegan} alt="burger" /></Link>  
@@ -99,6 +125,7 @@ function App() {
             <Footer />
       </body>
     </div>
+
   );
 
 
