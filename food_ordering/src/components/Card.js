@@ -40,7 +40,7 @@ function Card(){
          const newData = [
           { id : "burger",'fotoGeneral': Burger_General, 'foto1': burger1, 'foto2': burger2, 'foto3': burger3, 'foto4': burger4, title : 'Burger', price: '$8.99', description: "Ham, Cheddar Cheese, Onion, Cornichon, Salad, Tomato", name : "Cheese Burger Whopper" },
          { id : "pizza",'fotoGeneral': Pizza, 'foto1': pizza1, 'foto2':pizza2 , 'foto3': pizza3, 'foto4': pizza4, title : 'Pizza', price: '$12.99', description: "Bread, Pepperoni, Cheese, Parsil", name : "Margarita Pepperoni Pizza" },
-           { id : "pasta",'fotoGeneral': Kebab, 'foto1': kebab1, 'foto2': kebab2, 'foto3': kebab3, 'foto4': kebab4, title : 'Kebab', price: '$8.99', description: "Beef, Chicken, Potato, Aubergine, Tomato Sauce, Pepper, Mushroom", name : "Mix of Beef, Chicken, Ribs, Potato" },,
+           { id : "kebab",'fotoGeneral': Kebab, 'foto1': kebab1, 'foto2': kebab2, 'foto3': kebab3, 'foto4': kebab4, title : 'Kebab', price: '$8.99', description: "Beef, Chicken, Potato, Aubergine, Tomato Sauce, Pepper, Mushroom", name : "Mix of Beef, Chicken, Ribs, Potato" },,
          ]; 
 
         setMyData(newData);
@@ -87,10 +87,10 @@ function Card(){
                         <div className='content_card_foto'>
                             <img className='general_foto' src={items.fotoGeneral} alt="" />
                             <div className='content_foto_column'>
-                            <img src={items.foto1} alt="" />
-                            <img src={items.foto2} alt="" />
-                            <img src={items.foto3} alt="" />
-                            <img src={items.foto4} alt="" />
+                              <img src={items.foto1} alt="" />
+                              <img src={items.foto2} alt="" />
+                              <img src={items.foto3} alt="" />
+                              <img src={items.foto4} alt="" />
                             </div>
       
                         </div>

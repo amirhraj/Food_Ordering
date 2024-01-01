@@ -104,22 +104,22 @@ function App() {
              <div className='content_menu'>
                   <Link to="/Card/burger" ><img src={burger} alt="burger" onClick={() => handleItemClickItem('burger')} /></Link> 
                   <Link to="/Card/pizza"> <img src={pizza} alt="pizza" onClick={() => handleItemClickItem('pizza')} /></Link> 
-                  <Link to="/Card/pasta"><img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} /></Link> 
+                  <Link to="/*"><img src={pasta} alt="pasta" onClick={() => handleItemClickItem('pasta')} /></Link> 
                   <Link to="/*"><img src={sandwich} alt="sandwich" onClick={() => handleItemClickItem('sandwich')} /></Link> 
                   <Link to="/*"><img src={fri} alt="fri" onClick={() => handleItemClickItem('fri')} /></Link> 
-                  <Link to="/*"> <img src={kebab} alt="kebab" onClick={() => handleItemClickItem('kebab')} /></Link> 
+                  <Link to="/Card/kebab"> <img src={kebab} alt="kebab" onClick={() => handleItemClickItem('kebab')} /></Link> 
           </div>
   
           <button className='see_more'>See More... </button>
           <div className='content_mini_menu'>
-                  <Link  to='/Card'><img src={Vegan} alt="burger" /></Link>  
-                  <Link to='/Card'><img src={Sea_food} alt="pizza" /></Link>  
-                  <Link to='/Card'><img src={Fast} alt="pasta" /></Link>  
-                  <Link to='/Card'><img src={Kebab} alt="pasta" /></Link>    
-                  <Link to='/Card'> <img src={Salad} alt="andwich" /></Link> 
-                  <Link to='/Card'><img src={Dessert} alt="fri" /></Link> 
-                  <Link to='/Card'> <img src={Cake} alt="kebab" /></Link> 
-                  <Link to='/Card'><img src={Coffe} alt="kebab" /></Link>
+                  <Link  to='/Card/burger'><img src={Vegan} alt="burger" /></Link>  
+                  <Link to='/Card/pizza'><img src={Sea_food} alt="pizza" /></Link>  
+                  <Link to='/*'><img src={Fast} alt="pasta" /></Link>  
+                  <Link to='/Card/kebab'><img src={Kebab} alt="pasta" /></Link>    
+                  <Link to='/*'> <img src={Salad} alt="andwich" /></Link> 
+                  <Link to='/*'><img src={Dessert} alt="fri" /></Link> 
+                  <Link to='/*'> <img src={Cake} alt="kebab" /></Link> 
+                  <Link to='/*'><img src={Coffe} alt="kebab" /></Link>
                   <Outlet />  
           </div>
             <Footer />

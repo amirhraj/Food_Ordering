@@ -38,12 +38,16 @@
   margin-left: 32px;
   height: 35px;
   width: 35px;
+  cursor: pointer;
 }
+
+
 .geo{
   margin-top: 10px;
   margin-left: 71px;
   height: 15px;
   width: 15px;
+  cursor: pointer;
 }
 p{
   font-size: 9px;
@@ -63,6 +67,7 @@ p::before{
   margin-left: 81px;
   width: 34px;
   height: 34px;
+  cursor: pointer;
 }
 .text{
   margin-left: 41px;
